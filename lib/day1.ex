@@ -26,11 +26,8 @@ defmodule AOC.Day1 do
   end
 
   defp read_numbers do
-    {:ok, contents} = File.read("inputs/day1.txt")
-
     numbers =
-      contents
-      |> String.split("\r\n", trim: true)
+      AOC.Utilities.read_lines("inputs/day1.txt")
       |> Enum.map(&String.to_integer/1)
       |> Enum.sort()
 
